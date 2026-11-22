@@ -70,6 +70,9 @@ model Model {
   @@index([type])
   @@index([releasedAt])
 }
+  providerCount    Int      @default(0)
+  minInputPrice    Float?
+  minOutputPrice   Float?
 
 model ModelProvider {
   id               String   @id @default(cuid())
