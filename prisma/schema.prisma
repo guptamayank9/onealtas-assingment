@@ -69,6 +69,7 @@ model Model {
   @@index([labId])
   @@index([type])
   @@index([releasedAt])
+    @@index([minInputPrice])
 }
   providerCount    Int      @default(0)
   minInputPrice    Float?
