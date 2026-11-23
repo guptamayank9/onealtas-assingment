@@ -11,6 +11,7 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
 enum ModelType {
   TEXT
   IMAGE
@@ -43,37 +44,37 @@ model Provider {
 }
 
 model Model {
-  id               String   @id @default(cuid())
+  id               String           @id @default(cuid())
   name             String
-  slug             String   @unique
+  slug             String           @unique
   description      String?
-  type             ModelType @default(TEXT)
+  type             ModelType        @default(TEXT)
   contextWindow    Int?
   maxOutputTokens  Int?
   inputModalities  String[]
   outputModalities String[]
-  reasoning        Boolean  @default(false)
-  toolCalling      Boolean  @default(false)
-  structuredOutput Boolean  @default(false)
-  vision           Boolean  @default(false)
-  openWeights      Boolean  @default(false)
-  deprecated       Boolean  @default(false)
+  reasoning        Boolean          @default(false)
+  toolCalling      Boolean          @default(false)
+  structuredOutput Boolean          @default(false)
+  vision           Boolean          @default(false)
+  openWeights      Boolean          @default(false)
+  deprecated       Boolean          @default(false)
+  providerCount    Int              @default(0)
+  minInputPrice    Float?
+  minOutputPrice   Float?
   releasedAt       DateTime?
   labId            String
-  lab              Lab      @relation(fields: [labId], references: [id])
+  lab              Lab              @relation(fields: [labId], references: [id])
   providers        ModelProvider[]
   scores           BenchmarkScore[]
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
 
   @@index([labId])
   @@index([type])
   @@index([releasedAt])
   @@index([minInputPrice])
 }
-  providerCount    Int      @default(0)
-  minInputPrice    Float?
-  minOutputPrice   Float?
 
 model ModelProvider {
   id               String   @id @default(cuid())
@@ -90,9 +91,9 @@ model ModelProvider {
 }
 
 model Benchmark {
-  id          String   @id @default(cuid())
-  name        String   @unique
-  slug        String   @unique
+  id          String           @id @default(cuid())
+  name        String           @unique
+  slug        String           @unique
   category    String
   description String?
   scores      BenchmarkScore[]
