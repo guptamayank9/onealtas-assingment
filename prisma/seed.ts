@@ -120,13 +120,22 @@ async function main() {
     // 2 se 5 random providers, har ek ka price thoda alag
     const count = 2 + Math.floor(rand() * 4);
     const picked = [...providerRows].sort(() => rand() - 0.5).slice(0, count);
-    await prisma.modelProvider.createMany({
-      data: picked.map((p) => ({
-        modelId: model.id,
-        providerId: p.id,
-        inputPricePer1M: +jitter(m.inPrice, m.inPrice * 0.3).toFixed(3),
-        outputPricePer1M: m.outPrice ? +jitter(m.outPrice, m.outPrice * 0.3).toFixed(3) : null,
-      })),
+       const rows = picked.map((p) => ({
+      modelId: model.id,
+      providerId: p.id,
+      inputPricePer1M: +jitter(m.inPrice, m.inPrice * 0.3).toFixed(3),
+      outputPricePer1M: m.outPrice ? +jitter(m.outPrice, m.outPrice * 0.3).toFixed(3) : null,
+    }));
+    await prisma.modelProvider.createMany({ data: rows });
+    await prisma.model.update({
+      where: { id: model.id },
+      data: {
+        providerCount: rows.length,
+        minInputPrice: Math.min(...rows.map((r) => r.inputPricePer1M)),
+        minOutputPrice: m.outPrice
+          ? Math.min(...rows.map((r) => r.outputPricePer1M as number))
+          : null,
+      },
     });
 
     // Benchmark scores sirf TEXT models ke liye
