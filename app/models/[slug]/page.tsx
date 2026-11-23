@@ -53,7 +53,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
           <span
             key={c.label}
             className={`rounded-full border px-3 py-1 text-xs font-medium ${
-              c.on ? "border-indigo-400 bg-gray-900 text-white" : "border-gray-200 text-gray-400 line-through"
+              c.on ? "border-indigo-400 bg-indigo-500 text-white" : "border-white/10 text-gray-400 line-through"
             }`}
           >
             {c.label}
@@ -63,7 +63,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
 
       <section>
         <h2 className="mb-3 text-lg font-semibold">Specifications</h2>
-        <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-gray-200 bg-gray-200 sm:grid-cols-2">
+        <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-white/10 bg-gray-200 sm:grid-cols-2">
           {specs.map(([k, v]) => (
             <div key={k} className="flex justify-between bg-white px-4 py-3 text-sm">
               <dt className="text-gray-500">{k}</dt>
@@ -75,7 +75,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
 
       <section>
         <h2 className="mb-3 text-lg font-semibold">Providers and pricing</h2>
-        <div className="overflow-x-auto rounded-lg border border-gray-200">
+        <div className="overflow-x-auto rounded-lg border border-white/10">
           <table className="w-full min-w-[420px] text-left text-sm">
             <thead className="bg-gray-50 text-xs uppercase text-gray-500">
               <tr>
@@ -86,7 +86,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
             </thead>
             <tbody>
               {model.providers.map((p) => (
-                <tr key={p.id} className="border-t border-gray-100">
+                <tr key={p.id} className="border-t border-white/5">
                   <td className="px-4 py-3">
                     <Link href={`/providers/${p.provider.slug}`} className="hover:underline">
                       {p.provider.name}
@@ -109,7 +109,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
       {model.scores.length > 0 && (
         <section>
           <h2 className="mb-3 text-lg font-semibold">Benchmarks</h2>
-          <div className="space-y-3 rounded-lg border border-gray-200 p-4">
+          <div className="space-y-3 rounded-lg border border-white/10 p-4">
             {model.scores.map((s) => (
               <div key={s.id}>
                 <div className="mb-1 flex justify-between text-sm">
@@ -120,7 +120,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
                   <span className="font-medium">{s.score}</span>
                 </div>
                 <div className="h-2 rounded bg-gray-100">
-                  <div className="h-2 rounded bg-gray-900" style={{ width: `${s.score}%` }} />
+                  <div className="h-2 rounded bg-indigo-500" style={{ width: `${s.score}%` }} />
                 </div>
               </div>
             ))}

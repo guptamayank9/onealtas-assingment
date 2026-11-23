@@ -49,7 +49,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
   const cell = "px-4 py-3 align-top";
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-gray-200">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="w-full min-w-[640px] text-left text-sm">
         <thead className="bg-gray-50">
           <tr>
@@ -63,7 +63,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
         </thead>
         <tbody>
           {rows.map((r) => (
-            <tr key={r.label} className="border-t border-gray-100">
+            <tr key={r.label} className="border-t border-white/5">
               <td className={`${cell} text-gray-500`}>{r.label}</td>
               {models.map((m) => (
                 <td key={m.id} className={cell}>{r.render(m)}</td>
@@ -72,7 +72,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
           ))}
 
           {benchmarks.size > 0 && (
-            <tr className="border-t border-gray-200 bg-gray-50">
+            <tr className="border-t border-white/10 bg-gray-50">
               <td colSpan={models.length + 1} className="px-4 py-2 text-xs font-semibold uppercase text-gray-500">
                 Benchmarks (higher is better)
               </td>
@@ -84,7 +84,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
             const valid = scores.filter((s): s is number => s !== null);
             const best = valid.length ? Math.max(...valid) : null;
             return (
-              <tr key={slug} className="border-t border-gray-100">
+              <tr key={slug} className="border-t border-white/5">
                 <td className={`${cell} text-gray-500`}>{name}</td>
                 {scores.map((s, i) => (
                   <td key={models[i].id} className={`${cell} ${s !== null && s === best ? "font-bold" : ""}`}>

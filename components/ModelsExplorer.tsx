@@ -153,7 +153,7 @@ export default function ModelsExplorer() {
               key={t.key}
               onClick={() => update({ [t.key]: active ? null : "true" })}
               className={`rounded-full border px-3 py-1 text-xs font-medium ${
-                active ? "border-indigo-400 bg-gray-900 text-white" : "border-white/10 bg-white text-gray-700 hover:border-gray-500"
+                active ? "border-indigo-400 bg-indigo-500 text-white" : "border-white/10 bg-white text-gray-700 hover:border-gray-500"
               }`}
             >
               {t.label}
@@ -169,7 +169,7 @@ export default function ModelsExplorer() {
 
       {error && <div className="rounded-md bg-red-50 p-3 text-sm text-red-700">{error}</div>}
 
-      <div className="overflow-x-auto rounded-lg border border-gray-200">
+      <div className="overflow-x-auto rounded-lg border border-white/10">
         <table className="w-full min-w-[720px] text-left text-sm">
           <thead className="bg-gray-50 text-xs uppercase text-gray-500">
             <tr>
@@ -183,7 +183,7 @@ export default function ModelsExplorer() {
           </thead>
           <tbody className={loading ? "opacity-50" : ""}>
             {rows.map((m) => (
-              <tr key={m.id} className="border-t border-gray-100 hover:bg-gray-50">
+              <tr key={m.id} className="border-t border-white/5 hover:bg-gray-50">
                 <td className="px-4 py-3">
                   <Link href={`/models/${m.slug}`} className="font-medium hover:underline">{m.name}</Link>
                   <div className="text-xs text-gray-500">{m.lab.name}</div>

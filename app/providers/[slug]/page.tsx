@@ -22,7 +22,7 @@ async function ProviderDetail({ params }: { params: Promise<{ slug: string }> })
 
       <section>
         <h2 className="mb-3 text-lg font-semibold">Supported models ({provider.listings.length})</h2>
-        <div className="overflow-x-auto rounded-lg border border-gray-200">
+        <div className="overflow-x-auto rounded-lg border border-white/10">
           <table className="w-full min-w-[560px] text-left text-sm">
             <thead className="bg-gray-50 text-xs uppercase text-gray-500">
               <tr>
@@ -35,7 +35,7 @@ async function ProviderDetail({ params }: { params: Promise<{ slug: string }> })
             </thead>
             <tbody>
               {provider.listings.map((l) => (
-                <tr key={l.id} className="border-t border-gray-100 hover:bg-gray-50">
+                <tr key={l.id} className="border-t border-white/5 hover:bg-gray-50">
                   <td className="px-4 py-3">
                     <Link href={`/models/${l.model.slug}`} className="font-medium hover:underline">{l.model.name}</Link>
                     <div className="text-xs text-gray-500">{l.model.lab.name}</div>
