@@ -10,11 +10,11 @@ const links = [
 
 export default function Navbar() {
   return (
-    <header className="border-b border-gray-200 bg-zinc-900">
+    <header className="border-b border-white/10 bg-zinc-900">
       <nav className="mx-auto flex max-w-6xl items-center gap-6 px-4 py-3 text-sm">
         <Link href="/" className="text-base font-bold text-white">OneAtlas</Link>
         {links.map((l) => (
-          <Link key={l.href} href={l.href} className="text-gray-600 hover:text-white">
+          <Link key={l.href} href={l.href} className="text-zinc-400 hover:text-white">
             {l.label}
           </Link>
         ))}
