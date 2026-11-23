@@ -56,7 +56,7 @@ async function ProviderDetail({ params }: { params: Promise<{ slug: string }> })
 
 export default function ProviderPage({ params }: { params: Promise<{ slug: string }> }) {
   return (
-    <main className="mx-auto min-h-screen max-w-4xl bg-zinc-900 px-4 py-8 text-gray-900">
+    <main className="mx-auto min-h-screen max-w-4xl bg-zinc-900 px-4 py-10text-gray-900">
       <Link href="/providers" className="mb-6 inline-block text-sm text-zinc-400 hover:underline">&larr; All providers</Link>
       <Suspense fallback={<p className="text-sm text-zinc-400">Loading...</p>}>
         <ProviderDetail params={params} />

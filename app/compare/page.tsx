@@ -102,7 +102,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
 
 export default function ComparePage({ searchParams }: { searchParams: Promise<{ models?: string }> }) {
   return (
-    <main className="mx-auto min-h-screen max-w-6xl bg-zinc-900 px-4 py-8 text-gray-900">
+    <main className="mx-auto min-h-screen max-w-6xl bg-zinc-900 px-4 py-10text-gray-900">
       <Link href="/" className="mb-6 inline-block text-sm text-zinc-400 hover:underline">&larr; All models</Link>
       <h1 className="mb-6 text-2xl font-bold">Compare models</h1>
       <Suspense fallback={<p className="text-sm text-zinc-400">Loading...</p>}>
