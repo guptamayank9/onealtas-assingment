@@ -35,7 +35,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
 
   if (models.length < 2) {
     return (
-      <div className="rounded-lg border border-dashed border-gray-300 p-10 text-center text-gray-500">
+      <div className="rounded-lg border border-dashed border-white/10 p-10 text-center text-gray-500">
         Select at least 2 models from the{" "}
         <Link href="/" className="underline">models list</Link> to compare them.
       </div>

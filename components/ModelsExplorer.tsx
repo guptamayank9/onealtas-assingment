@@ -113,7 +113,7 @@ export default function ModelsExplorer() {
     return () => controller.abort();
   }, [query]);
 
-  const selectClass = "rounded-md border border-gray-300 bg-white px-3 py-2 text-sm";
+  const selectClass = "rounded-md border border-white/10 bg-white px-3 py-2 text-sm";
 
   return (
     <div className="space-y-4">
@@ -121,7 +121,7 @@ export default function ModelsExplorer() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search models or labs..."
-        className="w-full rounded-md border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-gray-900"
+        className="w-full rounded-md border border-white/10 px-4 py-2.5 text-sm outline-none focus:border-indigo-400"
       />
 
       <div className="flex flex-wrap gap-2">
@@ -153,7 +153,7 @@ export default function ModelsExplorer() {
               key={t.key}
               onClick={() => update({ [t.key]: active ? null : "true" })}
               className={`rounded-full border px-3 py-1 text-xs font-medium ${
-                active ? "border-gray-900 bg-gray-900 text-white" : "border-gray-300 bg-white text-gray-700 hover:border-gray-500"
+                active ? "border-indigo-400 bg-gray-900 text-white" : "border-white/10 bg-white text-gray-700 hover:border-gray-500"
               }`}
             >
               {t.label}
@@ -210,7 +210,7 @@ export default function ModelsExplorer() {
           <button
             disabled={meta.page <= 1}
             onClick={() => update({ page: String(meta.page - 1) })}
-            className="rounded-md border border-gray-300 px-3 py-1 disabled:opacity-40"
+            className="rounded-md border border-white/10 px-3 py-1 disabled:opacity-40"
           >
             Prev
           </button>
@@ -218,7 +218,7 @@ export default function ModelsExplorer() {
           <button
             disabled={meta.page >= meta.totalPages}
             onClick={() => update({ page: String(meta.page + 1) })}
-            className="rounded-md border border-gray-300 px-3 py-1 disabled:opacity-40"
+            className="rounded-md border border-white/10 px-3 py-1 disabled:opacity-40"
           >
             Next
           </button>

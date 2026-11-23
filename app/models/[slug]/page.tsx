@@ -53,7 +53,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
           <span
             key={c.label}
             className={`rounded-full border px-3 py-1 text-xs font-medium ${
-              c.on ? "border-gray-900 bg-gray-900 text-white" : "border-gray-200 text-gray-400 line-through"
+              c.on ? "border-indigo-400 bg-gray-900 text-white" : "border-gray-200 text-gray-400 line-through"
             }`}
           >
             {c.label}

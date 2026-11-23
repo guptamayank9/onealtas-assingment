@@ -7,7 +7,7 @@ async function ProvidersGrid() {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {providers.map((p) => (
-        <Link key={p.id} href={`/providers/${p.slug}`} className="rounded-lg border border-gray-200 p-4 hover:border-gray-900">
+        <Link key={p.id} href={`/providers/${p.slug}`} className="rounded-lg border border-gray-200 p-4 hover:border-indigo-400">
           <h2 className="font-semibold">{p.name}</h2>
           <p className="mt-1 text-sm text-gray-500">{p._count.listings} models available</p>
         </Link>

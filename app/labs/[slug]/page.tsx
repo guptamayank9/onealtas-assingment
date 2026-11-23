@@ -7,7 +7,7 @@ async function LabsGrid() {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {labs.map((l) => (
-        <Link key={l.id} href={`/labs/${l.slug}`} className="rounded-lg border border-gray-200 p-4 hover:border-gray-900">
+        <Link key={l.id} href={`/labs/${l.slug}`} className="rounded-lg border border-gray-200 p-4 hover:border-indigo-400">
           <div className="flex items-baseline justify-between">
             <h2 className="font-semibold">{l.name}</h2>
             <span className="text-xs text-gray-500">{l.country}</span>
