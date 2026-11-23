@@ -113,7 +113,7 @@ export default function ModelsExplorer() {
     return () => controller.abort();
   }, [query]);
 
-  const selectClass = "rounded-md border border-white/10 bg-white px-3 py-2 text-sm";
+  const selectClass = "rounded-md border border-white/10 bg-zinc-900 px-3 py-2 text-sm";
 
   return (
     <div className="space-y-4">
@@ -153,7 +153,7 @@ export default function ModelsExplorer() {
               key={t.key}
               onClick={() => update({ [t.key]: active ? null : "true" })}
               className={`rounded-full border px-3 py-1 text-xs font-medium ${
-                active ? "border-indigo-400 bg-indigo-500 text-white" : "border-white/10 bg-white text-gray-700 hover:border-gray-500"
+                active ? "border-indigo-400 bg-indigo-500 text-white" : "border-white/10 bg-zinc-900 text-gray-700 hover:border-gray-500"
               }`}
             >
               {t.label}
@@ -171,7 +171,7 @@ export default function ModelsExplorer() {
 
       <div className="overflow-x-auto rounded-lg border border-white/10">
         <table className="w-full min-w-[720px] text-left text-sm">
-          <thead className="bg-white/5 text-xs uppercase text-zinc-400">
+          <thead className="bg-zinc-900/5 text-xs uppercase text-zinc-400">
             <tr>
               <th className="px-4 py-3">Model</th>
               <th className="px-4 py-3">Type</th>
@@ -183,7 +183,7 @@ export default function ModelsExplorer() {
           </thead>
           <tbody className={loading ? "opacity-50" : ""}>
             {rows.map((m) => (
-              <tr key={m.id} className="border-t border-white/5 hover:bg-white/5">
+              <tr key={m.id} className="border-t border-white/5 hover:bg-zinc-900/5">
                 <td className="px-4 py-3">
                   <Link href={`/models/${m.slug}`} className="font-medium hover:underline">{m.name}</Link>
                   <div className="text-xs text-zinc-400">{m.lab.name}</div>

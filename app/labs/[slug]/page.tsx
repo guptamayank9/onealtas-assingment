@@ -21,7 +21,7 @@ async function LabsGrid() {
 
 export default function LabsPage() {
   return (
-    <main className="mx-auto min-h-screen max-w-6xl bg-white px-4 py-8 text-gray-900">
+    <main className="mx-auto min-h-screen max-w-6xl bg-zinc-900 px-4 py-8 text-gray-900">
       <h1 className="text-2xl font-bold">AI Labs</h1>
       <p className="mb-6 text-sm text-zinc-400">Research labs and companies building models.</p>
       <Suspense fallback={<p className="text-sm text-zinc-400">Loading...</p>}>

@@ -51,7 +51,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
   return (
     <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="w-full min-w-[640px] text-left text-sm">
-        <thead className="bg-white/5">
+        <thead className="bg-zinc-900/5">
           <tr>
             <th className={`${cell} text-xs uppercase text-zinc-400`}>Spec</th>
             {models.map((m) => (
@@ -72,7 +72,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
           ))}
 
           {benchmarks.size > 0 && (
-            <tr className="border-t border-white/10 bg-white/5">
+            <tr className="border-t border-white/10 bg-zinc-900/5">
               <td colSpan={models.length + 1} className="px-4 py-2 text-xs font-semibold uppercase text-zinc-400">
                 Benchmarks (higher is better)
               </td>
@@ -102,7 +102,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
 
 export default function ComparePage({ searchParams }: { searchParams: Promise<{ models?: string }> }) {
   return (
-    <main className="mx-auto min-h-screen max-w-6xl bg-white px-4 py-8 text-gray-900">
+    <main className="mx-auto min-h-screen max-w-6xl bg-zinc-900 px-4 py-8 text-gray-900">
       <Link href="/" className="mb-6 inline-block text-sm text-zinc-400 hover:underline">&larr; All models</Link>
       <h1 className="mb-6 text-2xl font-bold">Compare models</h1>
       <Suspense fallback={<p className="text-sm text-zinc-400">Loading...</p>}>

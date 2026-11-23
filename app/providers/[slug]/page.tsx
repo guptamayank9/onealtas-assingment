@@ -24,7 +24,7 @@ async function ProviderDetail({ params }: { params: Promise<{ slug: string }> })
         <h2 className="mb-3 text-lg font-semibold">Supported models ({provider.listings.length})</h2>
         <div className="overflow-x-auto rounded-lg border border-white/10">
           <table className="w-full min-w-[560px] text-left text-sm">
-            <thead className="bg-white/5 text-xs uppercase text-zinc-400">
+            <thead className="bg-zinc-900/5 text-xs uppercase text-zinc-400">
               <tr>
                 <th className="px-4 py-3">Model</th>
                 <th className="px-4 py-3">Type</th>
@@ -35,7 +35,7 @@ async function ProviderDetail({ params }: { params: Promise<{ slug: string }> })
             </thead>
             <tbody>
               {provider.listings.map((l) => (
-                <tr key={l.id} className="border-t border-white/5 hover:bg-white/5">
+                <tr key={l.id} className="border-t border-white/5 hover:bg-zinc-900/5">
                   <td className="px-4 py-3">
                     <Link href={`/models/${l.model.slug}`} className="font-medium hover:underline">{l.model.name}</Link>
                     <div className="text-xs text-zinc-400">{l.model.lab.name}</div>
@@ -56,7 +56,7 @@ async function ProviderDetail({ params }: { params: Promise<{ slug: string }> })
 
 export default function ProviderPage({ params }: { params: Promise<{ slug: string }> }) {
   return (
-    <main className="mx-auto min-h-screen max-w-4xl bg-white px-4 py-8 text-gray-900">
+    <main className="mx-auto min-h-screen max-w-4xl bg-zinc-900 px-4 py-8 text-gray-900">
       <Link href="/providers" className="mb-6 inline-block text-sm text-zinc-400 hover:underline">&larr; All providers</Link>
       <Suspense fallback={<p className="text-sm text-zinc-400">Loading...</p>}>
         <ProviderDetail params={params} />
