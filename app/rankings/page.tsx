@@ -61,7 +61,7 @@ async function Leaderboard({ searchParams }: { searchParams: SP }) {
         </div>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur">
+      <div className="overflow-x-auto rounded-xl border border-white/10 bg-zinc-900/[0.02] backdrop-blur">
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead className="text-xs uppercase tracking-wide text-zinc-500">
             <tr>
@@ -75,7 +75,7 @@ async function Leaderboard({ searchParams }: { searchParams: SP }) {
             {rows.map((r, i) => (
               <tr
                 key={r.model.id}
-                className="animate-fade-up border-t border-white/5 transition hover:bg-white/[0.04]"
+                className="animate-fade-up border-t border-white/5 transition hover:bg-zinc-900/[0.04]"
                 style={{ animationDelay: `${i * 30}ms` }}
               >
                 <td className="px-4 py-3">
@@ -99,7 +99,7 @@ async function Leaderboard({ searchParams }: { searchParams: SP }) {
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-3">
                     <span className="w-10 font-semibold text-white">{r.score}</span>
-                    <div className="h-2 w-36 overflow-hidden rounded-full bg-white/10">
+                    <div className="h-2 w-36 overflow-hidden rounded-full bg-zinc-900/10">
                       <div
                         className="h-2 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"
                         style={{ width: `${r.score}%` }}
