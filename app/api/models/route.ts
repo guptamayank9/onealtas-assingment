@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "../../../lib/prisma";
-import { Prisma } from "../../generated/prisma/client";
+import { prisma } from "@/lib/prisma";
+import { Prisma } from "@/app/generated/prisma/client";
+
 
 const MODEL_TYPES = [
   "TEXT", "IMAGE", "EMBEDDING", "VIDEO",
