@@ -161,7 +161,7 @@ export default function ModelsExplorer() {
           );
         })}
         {query && (
-          <button onClick={() => { setSearch(""); router.replace(pathname); }} className="px-2 text-xs text-gray-500 underline">
+          <button onClick={() => { setSearch(""); router.replace(pathname); }} className="px-2 text-xs text-zinc-400 underline">
             Clear all
           </button>
         )}
@@ -171,7 +171,7 @@ export default function ModelsExplorer() {
 
       <div className="overflow-x-auto rounded-lg border border-white/10">
         <table className="w-full min-w-[720px] text-left text-sm">
-          <thead className="bg-gray-50 text-xs uppercase text-gray-500">
+          <thead className="bg-white/5 text-xs uppercase text-zinc-400">
             <tr>
               <th className="px-4 py-3">Model</th>
               <th className="px-4 py-3">Type</th>
@@ -183,10 +183,10 @@ export default function ModelsExplorer() {
           </thead>
           <tbody className={loading ? "opacity-50" : ""}>
             {rows.map((m) => (
-              <tr key={m.id} className="border-t border-white/5 hover:bg-gray-50">
+              <tr key={m.id} className="border-t border-white/5 hover:bg-white/5">
                 <td className="px-4 py-3">
                   <Link href={`/models/${m.slug}`} className="font-medium hover:underline">{m.name}</Link>
-                  <div className="text-xs text-gray-500">{m.lab.name}</div>
+                  <div className="text-xs text-zinc-400">{m.lab.name}</div>
                 </td>
                 <td className="px-4 py-3">{m.type[0] + m.type.slice(1).toLowerCase()}</td>
                 <td className="px-4 py-3">{formatContext(m.contextWindow)}</td>
@@ -197,14 +197,14 @@ export default function ModelsExplorer() {
             ))}
             {!loading && rows.length === 0 && (
               <tr>
-                <td colSpan={6} className="px-4 py-10 text-center text-gray-500">No models match your filters.</td>
+                <td colSpan={6} className="px-4 py-10 text-center text-zinc-400">No models match your filters.</td>
               </tr>
             )}
           </tbody>
         </table>
       </div>
 
-      <div className="flex items-center justify-between text-sm text-gray-600">
+      <div className="flex items-center justify-between text-sm text-zinc-400">
         <span>{meta.total} models</span>
         <div className="flex items-center gap-2">
           <button

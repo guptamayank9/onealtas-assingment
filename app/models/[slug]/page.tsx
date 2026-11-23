@@ -41,11 +41,11 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
   return (
     <div className="space-y-8">
       <div>
-        <Link href={`/labs/${model.lab.slug}`} className="text-sm text-gray-500 hover:underline">
+        <Link href={`/labs/${model.lab.slug}`} className="text-sm text-zinc-400 hover:underline">
           {model.lab.name}
         </Link>
         <h1 className="text-3xl font-bold">{model.name}</h1>
-        {model.description && <p className="mt-2 text-gray-600">{model.description}</p>}
+        {model.description && <p className="mt-2 text-zinc-400">{model.description}</p>}
       </div>
 
       <div className="flex flex-wrap gap-2">
@@ -53,7 +53,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
           <span
             key={c.label}
             className={`rounded-full border px-3 py-1 text-xs font-medium ${
-              c.on ? "border-indigo-400 bg-indigo-500 text-white" : "border-white/10 text-gray-400 line-through"
+              c.on ? "border-indigo-400 bg-indigo-500 text-white" : "border-white/10 text-zinc-500 line-through"
             }`}
           >
             {c.label}
@@ -63,10 +63,10 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
 
       <section>
         <h2 className="mb-3 text-lg font-semibold">Specifications</h2>
-        <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-white/10 bg-gray-200 sm:grid-cols-2">
+        <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-2">
           {specs.map(([k, v]) => (
             <div key={k} className="flex justify-between bg-white px-4 py-3 text-sm">
-              <dt className="text-gray-500">{k}</dt>
+              <dt className="text-zinc-400">{k}</dt>
               <dd className="font-medium">{v}</dd>
             </div>
           ))}
@@ -77,7 +77,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
         <h2 className="mb-3 text-lg font-semibold">Providers and pricing</h2>
         <div className="overflow-x-auto rounded-lg border border-white/10">
           <table className="w-full min-w-[420px] text-left text-sm">
-            <thead className="bg-gray-50 text-xs uppercase text-gray-500">
+            <thead className="bg-white/5 text-xs uppercase text-zinc-400">
               <tr>
                 <th className="px-4 py-3">Provider</th>
                 <th className="px-4 py-3">Input / 1M</th>
@@ -98,7 +98,7 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
               ))}
               {model.providers.length === 0 && (
                 <tr>
-                  <td colSpan={3} className="px-4 py-6 text-center text-gray-500">No providers listed.</td>
+                  <td colSpan={3} className="px-4 py-6 text-center text-zinc-400">No providers listed.</td>
                 </tr>
               )}
             </tbody>
@@ -115,11 +115,11 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
                 <div className="mb-1 flex justify-between text-sm">
                   <span>
                     {s.benchmark.name}
-                    <span className="ml-2 text-xs text-gray-400">{s.benchmark.category}</span>
+                    <span className="ml-2 text-xs text-zinc-500">{s.benchmark.category}</span>
                   </span>
                   <span className="font-medium">{s.score}</span>
                 </div>
-                <div className="h-2 rounded bg-gray-100">
+                <div className="h-2 rounded bg-white/10">
                   <div className="h-2 rounded bg-indigo-500" style={{ width: `${s.score}%` }} />
                 </div>
               </div>
@@ -134,10 +134,10 @@ async function ModelDetail({ params }: { params: Promise<{ slug: string }> }) {
 export default function ModelPage({ params }: { params: Promise<{ slug: string }> }) {
   return (
     <main className="mx-auto min-h-screen max-w-4xl bg-white px-4 py-8 text-gray-900">
-      <Link href="/" className="mb-6 inline-block text-sm text-gray-500 hover:underline">
+      <Link href="/" className="mb-6 inline-block text-sm text-zinc-400 hover:underline">
         &larr; All models
       </Link>
-      <Suspense fallback={<p className="text-sm text-gray-500">Loading...</p>}>
+      <Suspense fallback={<p className="text-sm text-zinc-400">Loading...</p>}>
         <ModelDetail params={params} />
       </Suspense>
     </main>

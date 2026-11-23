@@ -35,7 +35,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
 
   if (models.length < 2) {
     return (
-      <div className="rounded-lg border border-dashed border-white/10 p-10 text-center text-gray-500">
+      <div className="rounded-lg border border-dashed border-white/10 p-10 text-center text-zinc-400">
         Select at least 2 models from the{" "}
         <Link href="/" className="underline">models list</Link> to compare them.
       </div>
@@ -51,9 +51,9 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
   return (
     <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="w-full min-w-[640px] text-left text-sm">
-        <thead className="bg-gray-50">
+        <thead className="bg-white/5">
           <tr>
-            <th className={`${cell} text-xs uppercase text-gray-500`}>Spec</th>
+            <th className={`${cell} text-xs uppercase text-zinc-400`}>Spec</th>
             {models.map((m) => (
               <th key={m.id} className={cell}>
                 <Link href={`/models/${m.slug}`} className="font-semibold hover:underline">{m.name}</Link>
@@ -64,7 +64,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
         <tbody>
           {rows.map((r) => (
             <tr key={r.label} className="border-t border-white/5">
-              <td className={`${cell} text-gray-500`}>{r.label}</td>
+              <td className={`${cell} text-zinc-400`}>{r.label}</td>
               {models.map((m) => (
                 <td key={m.id} className={cell}>{r.render(m)}</td>
               ))}
@@ -72,8 +72,8 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
           ))}
 
           {benchmarks.size > 0 && (
-            <tr className="border-t border-white/10 bg-gray-50">
-              <td colSpan={models.length + 1} className="px-4 py-2 text-xs font-semibold uppercase text-gray-500">
+            <tr className="border-t border-white/10 bg-white/5">
+              <td colSpan={models.length + 1} className="px-4 py-2 text-xs font-semibold uppercase text-zinc-400">
                 Benchmarks (higher is better)
               </td>
             </tr>
@@ -85,7 +85,7 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
             const best = valid.length ? Math.max(...valid) : null;
             return (
               <tr key={slug} className="border-t border-white/5">
-                <td className={`${cell} text-gray-500`}>{name}</td>
+                <td className={`${cell} text-zinc-400`}>{name}</td>
                 {scores.map((s, i) => (
                   <td key={models[i].id} className={`${cell} ${s !== null && s === best ? "font-bold" : ""}`}>
                     {s ?? "-"}
@@ -103,9 +103,9 @@ async function CompareTable({ searchParams }: { searchParams: Promise<{ models?:
 export default function ComparePage({ searchParams }: { searchParams: Promise<{ models?: string }> }) {
   return (
     <main className="mx-auto min-h-screen max-w-6xl bg-white px-4 py-8 text-gray-900">
-      <Link href="/" className="mb-6 inline-block text-sm text-gray-500 hover:underline">&larr; All models</Link>
+      <Link href="/" className="mb-6 inline-block text-sm text-zinc-400 hover:underline">&larr; All models</Link>
       <h1 className="mb-6 text-2xl font-bold">Compare models</h1>
-      <Suspense fallback={<p className="text-sm text-gray-500">Loading...</p>}>
+      <Suspense fallback={<p className="text-sm text-zinc-400">Loading...</p>}>
         <CompareTable searchParams={searchParams} />
       </Suspense>
     </main>
